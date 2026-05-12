@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\CustomerData\Cart">
+        <plugin name="naman_handlingfee_checkout_customerdata_cart"
+                type="Naman\HandlingFee\Plugin\Checkout\CustomerData\CartPlugin"/>
+    </type>
+    <type name="Magento\Quote\Model\Cart\CartTotalRepository">
+        <plugin name="naman_handlingfee_quote_carttotals_extension_attributes"
+                type="Naman\HandlingFee\Plugin\Quote\CartTotalsExtensionAttributes"/>
+    </type>
+    <type name="Magento\Sales\Model\OrderRepository">
+        <plugin name="naman_handlingfee_sales_order_repository_extension_attributes"
+                type="Naman\HandlingFee\Plugin\Sales\OrderRepositoryExtensionAttributes"/>
+    </type>
+    <type name="Magento\Sales\Block\Adminhtml\Order\Create\Totals">
+        <plugin name="naman_handlingfee_adminhtml_order_create_totals"
+                type="Naman\HandlingFee\Plugin\Adminhtml\Order\Create\TotalsPlugin"/>
+    </type>
+</config>

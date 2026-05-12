@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="naman_handlingfee" translate="label" sortOrder="940" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Handling Fee</label>
+            <tab>sales</tab>
+            <resource>Naman_HandlingFee::config</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Handling Fee</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="fee_percent" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Fee Percentage</label>
+                    <validate>validate-number validate-greater-than-zero</validate>
+                    <comment>Applied against cart subtotal (after discount), e.g. 7 for 7%.</comment>
+                </field>
+                <field id="subtotal_threshold" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Subtotal Exemption Threshold</label>
+                    <validate>validate-number</validate>
+                    <comment>Handling fee is exempt when subtotal is greater than this value.</comment>
+                </field>
+                <field id="wholesale_group_code" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wholesale Customer Group Code</label>
+                    <comment>Customer group code exempt from handling fee.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

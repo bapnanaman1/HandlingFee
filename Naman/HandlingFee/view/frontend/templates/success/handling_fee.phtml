@@ -1,0 +1,11 @@
+<?php
+/** @var \Naman\HandlingFee\Block\Checkout\Success\HandlingFee $block */
+?>
+<?php if ($block->hasHandlingFee()) : ?>
+    <div class="checkout-success-handling-fee">
+        <p>
+            <?= $block->escapeHtml(__('Handling Fee:')) ?>
+            <strong><?= /* @noEscape */ $block->getFormattedHandlingFee() ?></strong>
+        </p>
+    </div>
+<?php endif; ?>

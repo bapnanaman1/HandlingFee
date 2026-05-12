@@ -1,0 +1,108 @@
+{
+  "info": {
+    "name": "Naman Handling Fee API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Cart Totals",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{customer_token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/rest/V1/carts/mine/totals",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "rest",
+            "V1",
+            "carts",
+            "mine",
+            "totals"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Place Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{customer_token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"paymentMethod\": {\n    \"method\": \"checkmo\"\n  },\n  \"billing_address\": {\n    \"email\": \"customer@example.com\",\n    \"firstname\": \"John\",\n    \"lastname\": \"Doe\",\n    \"street\": [\"Street 1\"],\n    \"city\": \"Mumbai\",\n    \"region\": \"Maharashtra\",\n    \"postcode\": \"400001\",\n    \"country_id\": \"IN\",\n    \"telephone\": \"9999999999\"\n  }\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/rest/V1/carts/mine/payment-information",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "rest",
+            "V1",
+            "carts",
+            "mine",
+            "payment-information"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Order By Id",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{admin_token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/rest/V1/orders/{{order_id}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "rest",
+            "V1",
+            "orders",
+            "{{order_id}}"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost"
+    },
+    {
+      "key": "customer_token",
+      "value": ""
+    },
+    {
+      "key": "admin_token",
+      "value": ""
+    },
+    {
+      "key": "order_id",
+      "value": "1"
+    }
+  ]
+}

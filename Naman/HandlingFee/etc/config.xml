@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <naman_handlingfee>
+            <general>
+                <enabled>1</enabled>
+                <fee_percent>7</fee_percent>
+                <subtotal_threshold>50000</subtotal_threshold>
+                <wholesale_group_code>Wholesale</wholesale_group_code>
+            </general>
+        </naman_handlingfee>
+    </default>
+</config>
